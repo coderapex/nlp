@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>NLP Text Analysis Project</title>
+    <!-- <link rel="stylesheet" href="/styles/resets.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/form.css" />
+    <link rel="stylesheet" href="/styles/footer.css" /> -->
+  </head>
+
+  <body>
+    <header>
+      <h1>NLP News Analysis Project</h1>
+    </header>
+
+    <main>
+      <p>
+        Using the Aylien API to process text and analyse sentiment.
+      </p>
+
+      <h2>User Input Text Analysis</h2>
+
+      <form class="" onsubmit="return Client.handleUserTextInput(event)">
+        <label for="test-statement">
+          Type a statement to see what can be analysed from it.
+        </label>
+        <input
+          required
+          type="text"
+          id="test-statement"
+          placeholder="Enter a statement here."
+        />
+        <input type="submit" class="submit-button" value="Submit" />
+      </form>
+
+      <section class="text-results">
+        <ul>
+          <li>
+            <h3>Text Polarity:</h3>
+            <p id="text_polarity"></p>
+            <h4>Confidence:</h4>
+            <p id="text_polarity_confidence"></p>
+          </li>
+
+          <li>
+            <h3>Text Subjectivity:</h3>
+            <p id="text_subjectivity"></p>
+            <h4>Confidence:</h4>
+            <p id="text_subjectivity_confidence"></p>
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <form class="" onsubmit="return Client.handleUserURLInput(event)">
+        <label for="url-input">
+          Type a URL to analyse the article.
+        </label>
+        <input
+          required
+          id="url-input"
+          type="url"
+          placeholder="Enter URL in format https://..."
+        />
+        <input class="submit-button" type="submit" value="Submit" />
+      </form>
+
+      <section class="url-results">
+        <ul>
+          <li>
+            <h3>Text Polarity:</h3>
+            <p id="polarity"></p>
+            <h4>Confidence:</h4>
+            <p id="polarity_confidence"></p>
+          </li>
+
+          <li>
+            <h3>Text Subjectivity:</h3>
+            <p id="subjectivity"></p>
+            <h4>Confidence:</h4>
+            <p id="subjectivity_confidence"></p>
+          </li>
+
+          <li>
+            <h3>Text Excerpt:</h3>
+            <p id="excerpt"></p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Footer placed here.</p>
+    </footer>
+  </body>
+</html>
