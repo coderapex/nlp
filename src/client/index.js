@@ -14,3 +14,4 @@ export * from "./js/submitURL";
 
 export * from "./js/submitText";
 export * from "./js/submitURL";
+export * from "./js/helper";

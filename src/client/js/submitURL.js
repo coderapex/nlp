@@ -1,3 +1,6 @@
+import { trim } from "./helper";
+import { titleCase } from "./helper";
+
 function handleUserURLInput(event) {
   event.preventDefault();
   const url = document.getElementById("url-input").value;
@@ -16,12 +19,21 @@ function handleUserURLInput(event) {
   })
     .then(res => res.json())
     .then(data => {
-      document.getElementById("polarity").innerHTML = data.polarity;
-      document.getElementById("subjectivity").innerHTML = data.subjectivity;
-      document.getElementById("polarity_confidence").innerHTML =
-        data.polarity_confidence;
-      document.getElementById("subjectivity_confidence").innerHTML =
-        data.subjectivity_confidence;
+      let trimVal = trim(1.552368, 2);
+      console.log(`🚀: handleUserURLInput -> trimVal : `, trimVal);
+
+      document.getElementById("polarity").innerHTML = titleCase(data.polarity);
+      document.getElementById("subjectivity").innerHTML = titleCase(
+        data.subjectivity
+      );
+      document.getElementById("polarity_confidence").innerHTML = trim(
+        data.polarity_confidence,
+        2
+      );
+      document.getElementById("subjectivity_confidence").innerHTML = trim(
+        data.subjectivity_confidence,
+        2
+      );
       document.getElementById("excerpt").innerHTML = data.text;
     });
 }

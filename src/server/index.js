@@ -61,7 +61,12 @@ app.post("/api", (req, res) => {
       console.log(result);
 
       // converting the result to JSON and sending it back
-      res.send(result);
+      res.send({
+        polarity: result.polarity,
+        polarity_confidence: result.polarity_confidence,
+        subjectivity_confidence: result.subjectivity_confidence,
+        subjectivity: result.subjectivity
+      });
     }
   });
 });

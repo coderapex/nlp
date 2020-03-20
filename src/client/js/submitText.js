@@ -1,3 +1,6 @@
+import { trim } from "./helper";
+import { titleCase } from "./helper";
+
 function handleUserTextInput(event) {
   event.preventDefault();
   const textValue = document.getElementById("test-statement").value;
@@ -17,23 +20,8 @@ function handleUserTextInput(event) {
     },
     body: JSON.stringify({ textValue })
   })
-    .then(res => {
-      console.log(
-        "Back to handleUserTextInput(event) after receiving response from Aylien API."
-      );
-
-      console.log("Response received: ");
-      console.log(res);
-
-      // console.log("Text value received");
-      // console.log(`🚀: handleUserTextInput -> textValue : `, textValue);
-      res.json();
-    })
+    .then(res => res.json())
     .then(data => {
-      console.log(
-        "Back to handleUserTextInput(event) after receiving response from Aylien API."
-      );
-
       console.log("Data received: ");
       console.log(data);
 
@@ -51,10 +39,13 @@ function handleUserTextInput(event) {
       );
 
       // setting the HTML Element values to the values returned by the API
-      textPolarity.innerHTML = data.polarity;
-      textSubjectivity.innerHTML = data.subjectivity;
-      textPolarityConfidence.innerHTML = data.polarity_confidence;
-      textSubjectivityConfidence.innerHTML = data.subjectivity_confidence;
+      textPolarity.innerHTML = titleCase(data.polarity);
+      textSubjectivity.innerHTML = titleCase(data.subjectivity);
+      textPolarityConfidence.innerHTML = trim(data.polarity_confidence, 2);
+      textSubjectivityConfidence.innerHTML = trim(
+        data.subjectivity_confidence,
+        2
+      );
     });
 }
 

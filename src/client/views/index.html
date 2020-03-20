@@ -16,6 +16,46 @@
         sentiment.
       </p>
 
+      <h2>Section 1 : URL Input Analysis</h2>
+
+      <form class="" onsubmit="return Client.handleUserURLInput(event)">
+        <label for="url-input">
+          Type a URL to analyse the article.
+        </label>
+        <input
+          required
+          id="url-input"
+          type="url"
+          placeholder="Enter URL in format https://..."
+        />
+        <input class="submit-button" type="submit" value="Submit" />
+      </form>
+
+      <section class="url-results">
+        <div class="result-column">
+          <h3>Text Polarity</h3>
+          <p class="result-value" id="polarity">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Polarity Confidence</h3>
+          <p class="result-value" id="polarity_confidence">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Text Subjectivity</h3>
+          <p class="result-value" id="subjectivity">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Subjectivity Confidence</h3>
+          <p class="result-value" id="subjectivity_confidence">0</p>
+        </div>
+      </section>
+      <div>
+        <h3>Article Excerpt</h3>
+        <p id="excerpt">0</p>
+      </div>
+
+      <hr />
+
       <h2>Section 1 : User Input Analysis</h2>
 
       <form class="" onsubmit="return Client.handleUserTextInput(event)">
@@ -32,28 +72,12 @@
       </form>
 
       <section class="text-results">
-        <!-- <ul>
-          <li>
-            <h3>Text Polarity:</h3>
-            <p id="text_polarity"></p>
-            <h4>Confidence:</h4>
-            <p id="text_polarity_confidence"></p>
-          </li>
-
-          <li>
-            <h3>Text Subjectivity:</h3>
-            <p id="text_subjectivity"></p>
-            <h4>Confidence:</h4>
-            <p id="text_subjectivity_confidence"></p>
-          </li>
-        </ul> -->
-
         <div class="result-column">
           <h3>Text Polarity</h3>
           <p class="result-value" id="text_polarity">0</p>
         </div>
         <div class="result-column">
-          <h3>Confidence</h3>
+          <h3>Polarity Confidence</h3>
           <p class="result-value" id="text_polarity_confidence">0</p>
         </div>
         <div class="result-column">
@@ -61,71 +85,12 @@
           <p class="result-value" id="text_subjectivity">0</p>
         </div>
         <div class="result-column">
-          <h3>Confidence</h3>
+          <h3>Subjectivity Confidence</h3>
           <p class="result-value" id="text_subjectivity_confidence">0</p>
         </div>
       </section>
 
       <hr />
-
-      <h2>Section 2 : URL Input Analysis</h2>
-
-      <form class="" onsubmit="return Client.handleUserURLInput(event)">
-        <label for="url-input">
-          Type a URL to analyse the article.
-        </label>
-        <input
-          required
-          id="url-input"
-          type="url"
-          placeholder="Enter URL in format https://..."
-        />
-        <input class="submit-button" type="submit" value="Submit" />
-      </form>
-
-      <section class="url-results">
-        <!-- <ul>
-          <li>
-            <h3>Text Polarity:</h3>
-            <p id="polarity"></p>
-            <h4>Confidence:</h4>
-            <p id="polarity_confidence"></p>
-          </li>
-
-          <li>
-            <h3>Text Subjectivity:</h3>
-            <p id="subjectivity"></p>
-            <h4>Confidence:</h4>
-            <p id="subjectivity_confidence"></p>
-          </li>
-
-          <li>
-            <h3>Text Excerpt:</h3>
-            <p id="excerpt"></p>
-          </li>
-        </ul> -->
-
-        <div class="result-column">
-          <h3>Text Polarity</h3>
-          <p class="result-value" id="polarity">0</p>
-        </div>
-        <div class="result-column">
-          <h3>Confidence</h3>
-          <p class="result-value" id="polarity_confidence">0</p>
-        </div>
-        <div class="result-column">
-          <h3>Text Subjectivity</h3>
-          <p class="result-value" id="subjectivity">0</p>
-        </div>
-        <div class="result-column">
-          <h3>Confidence</h3>
-          <p class="result-value" id="subjectivity_confidence">0</p>
-        </div>
-      </section>
-      <div>
-        <h3>Article Excerpt</h3>
-        <p id="excerpt">0</p>
-      </div>
     </main>
 
     <footer>
