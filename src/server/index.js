@@ -16,7 +16,7 @@ const textApi = new AYLIENTextAPI({
 });
 
 // debugging that the correct app details are used
-console.log(`🚀: textApi`, textApi);
+// console.log(`🚀: textApi`, textApi);
 
 // setting app to use express
 const app = express();
@@ -26,13 +26,13 @@ app.use(cors());
 
 // setting up Middleware to use bodyParser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // setting source folder to be used
 app.use(express.static("dist"));
 
 // designates what port the app will listen to for incoming requests
-const PORT = 8080;
+const PORT = 8081;
 
 app.listen(PORT, function() {
   console.log("Example app listening on port " + PORT);
@@ -46,14 +46,21 @@ app.get("/", function(req, res) {
 
 // POST to process user input values
 app.post("/api", (req, res) => {
-  const textValue = req.body.textValue;
-  console.log(`🚀: textValue`, textValue);
-  console.log("Request to '/api' endpoint", textValue);
-  textApi.sentiment({ text: textValue }, (error, result, remaining) => {
+  const text = req.body.textValue;
+  console.log(
+    "Entering POST request to '/api' with value of variable 'text: '",
+    text
+  );
+  textApi.sentiment({ text: text }, (error, result, remaining) => {
     if (error) {
       console.log(error);
     } else {
-      console.log("Aylien Callback", result, remaining);
+      // console.log("Aylien Callback", result, remaining);
+      console.log("Aylien API Call Successful.");
+      console.log("Result of analysis: ");
+      console.log(result);
+
+      // converting the result to JSON and sending it back
       res.send(result);
     }
   });

@@ -5,7 +5,10 @@ function handleUserTextInput(event) {
     console.log("Text Value invalid/empty");
     return;
   }
+  console.log("Entering handleUserTextInput(event).");
+  console.log("TextValue: ");
   console.log(textValue);
+
   fetch("/api", {
     method: "POST",
     mode: "cors",
@@ -15,11 +18,28 @@ function handleUserTextInput(event) {
     body: JSON.stringify({ textValue })
   })
     .then(res => {
-      console.log("Text value received");
-      console.log(`🚀: handleUserTextInput -> textValue`, textValue);
+      console.log(
+        "Back to handleUserTextInput(event) after receiving response from Aylien API."
+      );
+
+      console.log("Response received: ");
+      console.log(res);
+
+      // console.log("Text value received");
+      // console.log(`🚀: handleUserTextInput -> textValue : `, textValue);
       res.json();
     })
     .then(data => {
+      console.log(
+        "Back to handleUserTextInput(event) after receiving response from Aylien API."
+      );
+
+      console.log("Data received: ");
+      console.log(data);
+
+      // console.log("JSON.parse(data_received)");
+      // console.log(JSON.parse(data));
+
       // getting the HTML Elements
       let textPolarity = document.getElementById("text_polarity");
       let textSubjectivity = document.getElementById("text_subjectivity");

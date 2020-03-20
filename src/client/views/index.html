@@ -3,11 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <title>NLP Text Analysis Project</title>
-    <!-- <link rel="stylesheet" href="/styles/resets.css" />
-    <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/header.css" />
-    <link rel="stylesheet" href="/styles/form.css" />
-    <link rel="stylesheet" href="/styles/footer.css" /> -->
   </head>
 
   <body>
@@ -17,10 +12,11 @@
 
     <main>
       <p>
-        Using the Aylien API to process text and analyse sentiment.
+        In this project we are using the Aylien API to process text and analyse
+        sentiment.
       </p>
 
-      <h2>User Input Text Analysis</h2>
+      <h2>Section 1 : User Input Analysis</h2>
 
       <form class="" onsubmit="return Client.handleUserTextInput(event)">
         <label for="test-statement">
@@ -36,7 +32,7 @@
       </form>
 
       <section class="text-results">
-        <ul>
+        <!-- <ul>
           <li>
             <h3>Text Polarity:</h3>
             <p id="text_polarity"></p>
@@ -50,10 +46,29 @@
             <h4>Confidence:</h4>
             <p id="text_subjectivity_confidence"></p>
           </li>
-        </ul>
+        </ul> -->
+
+        <div class="result-column">
+          <h3>Text Polarity</h3>
+          <p class="result-value" id="text_polarity">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Confidence</h3>
+          <p class="result-value" id="text_polarity_confidence">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Text Subjectivity</h3>
+          <p class="result-value" id="text_subjectivity">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Confidence</h3>
+          <p class="result-value" id="text_subjectivity_confidence">0</p>
+        </div>
       </section>
 
       <hr />
+
+      <h2>Section 2 : URL Input Analysis</h2>
 
       <form class="" onsubmit="return Client.handleUserURLInput(event)">
         <label for="url-input">
@@ -69,7 +84,7 @@
       </form>
 
       <section class="url-results">
-        <ul>
+        <!-- <ul>
           <li>
             <h3>Text Polarity:</h3>
             <p id="polarity"></p>
@@ -88,12 +103,33 @@
             <h3>Text Excerpt:</h3>
             <p id="excerpt"></p>
           </li>
-        </ul>
+        </ul> -->
+
+        <div class="result-column">
+          <h3>Text Polarity</h3>
+          <p class="result-value" id="polarity">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Confidence</h3>
+          <p class="result-value" id="polarity_confidence">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Text Subjectivity</h3>
+          <p class="result-value" id="subjectivity">0</p>
+        </div>
+        <div class="result-column">
+          <h3>Confidence</h3>
+          <p class="result-value" id="subjectivity_confidence">0</p>
+        </div>
       </section>
+      <div>
+        <h3>Article Excerpt</h3>
+        <p id="excerpt">0</p>
+      </div>
     </main>
 
     <footer>
-      <p>Footer placed here.</p>
+      <p>A Udacity Front End Nanodegree Project.</p>
     </footer>
   </body>
 </html>
