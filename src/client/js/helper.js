@@ -1,5 +1,5 @@
 // trim(1.0789, 2); => o/p: 1.07
-function trim(number, precision) {
+function trim(number, precision = 2) {
   let array = number.toString().split(".");
   array.push(array.pop().substring(0, precision));
   let trimmedNumber = array.join(".");
