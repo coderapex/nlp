@@ -45,7 +45,7 @@ app.get("/", function(req, res) {
 });
 
 // POST to process user input values
-app.post("/api", (req, res) => {
+app.post("/analyse-text", (req, res) => {
   const text = req.body.textValue;
   console.log(
     "Entering POST request to '/api' with value of variable 'text: '",
@@ -59,6 +59,8 @@ app.post("/api", (req, res) => {
       console.log("Aylien API Call Successful.");
       console.log("Result of analysis: ");
       console.log(result);
+      console.log("Remaining calls:");
+      console.log(remaining);
 
       // converting the result to JSON and sending it back
       res.send({
@@ -72,7 +74,7 @@ app.post("/api", (req, res) => {
 });
 
 // POST to process contents of user given URL
-app.post("/article", (req, res) => {
+app.post("/analyse-url", (req, res) => {
   const text = req.body.text;
   console.log(`🚀: text`, text);
   console.log("Request to '/article' endpoint", text);
@@ -80,7 +82,13 @@ app.post("/article", (req, res) => {
     if (error) {
       console.log(error);
     } else {
-      console.log("Aylien Callback", result, remaining);
+      // console.log("Aylien Callback", result, remaining);
+      console.log("Aylien API Call Successful.");
+      console.log("Result of analysis: ");
+      console.log(result);
+      console.log("Remaining calls:");
+      console.log(remaining);
+
       res.send(result);
     }
   });

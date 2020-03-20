@@ -9,7 +9,7 @@ function handleUserURLInput(event) {
     return;
   }
   console.log(url);
-  fetch("/article", {
+  fetch("/analyse-url", {
     method: "POST",
     mode: "cors",
     headers: {

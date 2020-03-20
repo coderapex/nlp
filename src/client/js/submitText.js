@@ -12,7 +12,7 @@ function handleUserTextInput(event) {
   console.log("TextValue: ");
   console.log(textValue);
 
-  fetch("/api", {
+  fetch("/analyse-text", {
     method: "POST",
     mode: "cors",
     headers: {
